@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你是色盲嘛？</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="./lib/jQuery_mini.js"></script>
+    <script src="./lib/underscore.js"></script>
+</head>
+
+<body>
+    <div class="grid">
+        <!-- 加载页面 -->
+        <div class="" id="loading">
+            <h1>加载中...</h1>
+        </div>
+        <!-- 加载后主页面展示 -->
+        <div class="hide" id="index">
+            <h1>老色批游戏</h1>
+            <p id="help"> 找出所有色块里颜色不同的一个</p>
+            <div class="btns">
+                <button class="btn btn1 btn_play">普通模式</button>
+                <!-- <button class="btn btn2 btn_play">双色模式</button> -->
+            </div>
+        </div>
+        <!-- 进入游戏界面 -->
+        <div class="hide" id="room">
+            <header class="head">
+                <span class="grade">
+                    得分：
+                    <i>
+                        1
+                    </i>
+                </span>
+                <span class="time">
+                </span>
+                <button class="btn btn1 btn_pause">
+                    暂停
+                </button>
+            </header>
+            <div id="box">
+
+            </div>
+        </div>
+        <!-- 游戏失败与暂停页面 -->
+        <div class="hide" id="dialog">
+            <div class="gameOver">
+                <h3></h3>
+                <div class="btns">
+                    <button class="btn btn1 restart">重来</button>
+                    <button class="btn btn2 indexPage">主页面</button>
+                </div>
+            </div>
+            <div class="pause">
+                <h3>游戏暂停</h3>
+                <div class="btns">
+                    <button class="btn btn1 resume">继续</button>
+                    <button class="btn btn1 restart" >重来</button>
+                    <button class="btn btn2 indexPage">主菜单</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/game.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/model1.js"></script>
+</body>
+
+</html>

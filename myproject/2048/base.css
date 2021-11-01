@@ -1,0 +1,159 @@
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 42.6px !important;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 80px !important;
+  }
+}
+body {
+  background-color: #edcf72;
+}
+#game {
+  height: 10.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  width: 7.5rem;
+  height: 0.625rem;
+  font-size: 0.3125rem;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.scoreShow {
+  height: 0.625rem;
+  line-height: 0.625rem;
+}
+.model {
+  text-decoration: none;
+  color: white;
+  background-color: #98bf23;
+  font-size: 0.45rem;
+  border-radius: 0.125rem;
+}
+.gridPanel {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: #4f75e8;
+  border-radius: 0.125rem;
+  position: relative;
+}
+.grid,
+.cell {
+  /* width: 1.25rem;
+  height: 1.25rem; */
+  border-radius: 0.075rem;
+}
+
+.grid {
+  background-image: linear-gradient(
+    rgb(168, 218, 111),
+    rgba(191, 199, 93, 0.818)
+  );
+
+  float: left;
+  /* margin: .2rem 0 0 .2rem; */
+}
+
+.cell {
+  position: absolute;
+  /* font-size: .75rem; */
+  text-align: center;
+  /* line-height: 1.25rem; */
+  color: #fff;
+}
+
+.n2 {
+  background-color: #eee3da;
+}
+
+.n4 {
+  background-color: #ede0c8;
+}
+
+.n8 {
+  background-color: #f2b179;
+}
+
+.n16 {
+  background-color: #f59563;
+}
+
+.n32 {
+  background-color: #f67c5f;
+}
+
+.n64 {
+  background-color: #f65e3b;
+}
+
+.n128 {
+  background-color: #edcf72;
+}
+
+.n256 {
+  background-color: #edcc61;
+}
+
+.n512 {
+  background-color: #9c0;
+}
+
+.n1024 {
+  background-color: #33b5e5;
+}
+
+.n2048 {
+  background-color: #09c;
+}
+
+.n4096 {
+  background-color: #a6c;
+}
+
+.n8192 {
+  background-color: #93c;
+}
+
+.n2,
+.n4 {
+  color: #776e65;
+}
+
+#gameOver {
+  width: 100%;
+  display: none;
+  position: fixed;
+  left: 50%;
+  right: 50%;
+  top: 3.1rem;
+  width: 2.75rem;
+  height: 2.5rem;
+  font-size: 0.15rem;
+  border-radius: 0.125rem;
+  background-color: white;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 5;
+}
+
+#gameOver a {
+  display: inline-block;
+  width: 2.125rem;
+  height: 0.625rem;
+  border-radius: 0.125rem;
+  text-decoration: none;
+  background-color: #9f8d77;
+  color: white;
+  font-size: 0.45rem;
+}
