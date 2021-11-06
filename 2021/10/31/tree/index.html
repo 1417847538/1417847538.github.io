@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="xulongze,github">
+    <meta name="keywords" content="数据结构_树_js-笔记, xulongze,github">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小蓝的窝</title>
+    <title>数据结构_树_js-笔记 | 小蓝的窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -318,7 +318,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">数据结构_树_js-笔记</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -454,14 +467,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-01
+                    2021-11-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    870
+                    892
                 </div>
                 
 
@@ -485,7 +498,7 @@
             <div id="articleContent">
                 <h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树中的节点最多只能有两个子节点，一个左侧子节点，一个右侧子节点。</p>
 <p>二叉搜索树(BST)是二叉树的一种，但是它只允许你在左侧节点存储比父节点小的值，在右侧节点存储大于或等于父节点的值</p>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//创建二叉树</span>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//创建二叉搜索树</span>
 <span class="token keyword">function</span> <span class="token function">BinarySearchTree</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">var</span> Node <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key
@@ -554,7 +567,8 @@
     <span class="token keyword">var</span> postOrderTraverseNode <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> callback<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>node <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>     
             <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> callback<span class="token punctuation">)</span>
-            <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> callback<span class="token punctuation">)</span>                             <span class="token function">callback</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//对根节点进行操作</span>
+            <span class="token function">postOrderTraverseNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> callback<span class="token punctuation">)</span>                             
+            <span class="token function">callback</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//对根节点进行操作</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
      <span class="token comment" spellcheck="true">//后序遍历，先访问节点的后代节点，再访问节点本身。</span>
@@ -612,7 +626,7 @@
     <span class="token keyword">var</span> removeNode <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
          <span class="token keyword">if</span><span class="token punctuation">(</span>node <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
            <span class="token keyword">return</span> <span class="token keyword">null</span>
-       <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>key <span class="token operator">&lt;</span> node<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">{</span>
             node<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> key<span class="token punctuation">)</span>
             <span class="token keyword">return</span> node
@@ -638,20 +652,21 @@
                 <span class="token keyword">return</span> node
             <span class="token punctuation">}</span>
             <span class="token comment" spellcheck="true">//删除的节点有两个子节点</span>
-            <span class="token keyword">var</span> finMinNode <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    <span class="token keyword">return</span> node
+            <span class="token keyword">var</span> findMinNode <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">while</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    node <span class="token operator">=</span> node<span class="token punctuation">.</span>left
                 <span class="token punctuation">}</span>
-                node <span class="token operator">=</span> node<span class="token punctuation">.</span>right
+                <span class="token keyword">return</span> node
             <span class="token punctuation">}</span>
+            <span class="token keyword">var</span> aux <span class="token operator">=</span> <span class="token function">findMinNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
             node<span class="token punctuation">.</span>key <span class="token operator">=</span> aux<span class="token punctuation">.</span>key
-            node<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> aux<span class="token punctuation">.</span>key<span class="token punctuation">)</span>
+            node<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">removeNode</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> aux<span class="token punctuation">.</span>key<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//为了改变替换的节点的指向</span>
             <span class="token keyword">return</span> node
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">//移除一个节点</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>remove <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      
+          <span class="token function">removeNode</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span>key<span class="token punctuation">)</span>
     <span class="token punctuation">}</span>  
 <span class="token punctuation">}</span>
 
@@ -756,7 +771,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1270,42 +1289,52 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/31/tree/">
+                <a href="/2021/11/04/chart/">
                     <div class="card-image">
                         
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="数据结构_图_js-笔记">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">数据结构_图_js-笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二叉树二叉树中的节点最多只能有两个子节点，一个左侧子节点，一个右侧子节点。
-二叉搜索树(BST)是二叉树的一种，但是它只允许你在左侧节点存储比父节点小的值，在右侧节点存储大于或等于父节点的值
-//创建二叉树
-function BinaryS
+                            图图是一组由边连接的节点。
+
+图的相关概念：由一条边连接在一起的顶点称为相邻顶点。
+一个顶点的度是其相邻顶点的数量。路径是顶点v1,v2,….vk的一个连续序列。途中包含路径：A B E I 和 A C D G
+简单路径：要求不包含重复的顶
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-04
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            小蓝
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                        <span class="chip bg-color">数据结构</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1560,7 +1589,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.7k</span>&nbsp;字
+                class="white-color">18.9k</span>&nbsp;字
             
             
             
