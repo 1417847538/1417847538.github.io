@@ -6,7 +6,7 @@
   <link href="http://xiaolan1.icu/atom.xml" rel="self"/>
   
   <link href="http://xiaolan1.icu/"/>
-  <updated>2021-11-04T11:03:05.258Z</updated>
+  <updated>2021-11-08T15:49:48.925Z</updated>
   <id>http://xiaolan1.icu/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue2-学习笔记</title>
+    <link href="http://xiaolan1.icu/2021/11/06/vue/vue2/"/>
+    <id>http://xiaolan1.icu/2021/11/06/vue/vue2/</id>
+    <published>2021-11-06T08:43:02.509Z</published>
+    <updated>2021-11-08T15:49:48.925Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="http://xiaolan1.icu/categories/Vue/"/>
+    
+    
+    <category term="Vue" scheme="http://xiaolan1.icu/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构_树_js-笔记</title>
