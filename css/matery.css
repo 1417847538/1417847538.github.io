@@ -2538,3 +2538,11 @@ footer .copy-right {
       opacity: 0;
     }
   }
+
+/* 备案 */
+.beian{
+    width: 100%;
+    overflow: hidden;
+    float: left;
+    text-align: center;
+}

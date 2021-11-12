@@ -31,9 +31,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="小蓝的窝" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="小蓝的窝" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -467,21 +467,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-08
+                    2021-11-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    12 分
                 </div>
                 
 
@@ -611,7 +611,116 @@
 <p>父传子：父组件如果用v-bind 那么会把绑定的数据传给子组件，如果不用v-bind，会把后面的字符串传递给子组件(基本不用)，子组件用props接收数据</p>
 <p>props接收写法：1.用数组props:[‘name1’,’name2’]  </p>
 <p>2.用对象类型限制props:{name1:Array, name2: String }</p>
-<p>3对象限制+提供默认值 props:{ name1:{ type:Array,default:[‘asd’]}, name2:{type: String, defalut: ‘asd’} }</p>
+<p>3对象限制+提供默认值 props:{ name1:{ type:Array, default(){ return [] } , require: true }, name2:{type: String, defalut: ‘asd’} }注意：类型是对象或者数组时，默认值必须是一个函数</p>
+<p>注意：html页面中父组件给子组件传递值时，绑定的不能是驼峰标识，要用-连接，比如myHomeMessage 要写成 my-home-message,但是可以全小写</p>
+<p>子传父：用自定义事件， 子组件中 标签元素中@click=”fn(item)” ,  methods中 写 fn(item){this.$emit(‘触发的事件名’，item)} 父组件中 标签元素中@触发的事件名=”fn2”   methods中写 fn2(item){ ……….}</p>
+<h3 id="Watch数据监听"><a href="#Watch数据监听" class="headerlink" title="Watch数据监听"></a>Watch数据监听</h3><pre class=" language-vue"><code class="language-vue"><script>
+    watch:{
+        data1(oldValue,newValue){
+            .......
+        }
+    }
+</script>
+</code></pre>
+<h3 id="通过-children-和-refs访问子组件"><a href="#通过-children-和-refs访问子组件" class="headerlink" title="通过$children 和$refs访问子组件"></a>通过$children 和$refs访问子组件</h3><p>$chilidren用的少，主要使用$refs  在标签元素中 绑定 ref=”组件名”  使用 $refs进行访问 </p>
+<h3 id="插槽slot"><a href="#插槽slot" class="headerlink" title="插槽slot"></a>插槽slot</h3><p>默认插槽</p>
+<p>在子组件中使用<slot></slot>  在父组件中使用子组件时，在子组件中写一些标签元素，slot使这些标签元素替换自己显示在页面中</p>
+<p>具名插槽</p>
+<p>在子组件中slot 绑定一个name属性 ，在父组件使用子组件时，插入的标签元素绑定slot属性，后面的名字和slot的name属性名字相同，这样就会替换特定的插槽</p>
+<p>作用域插槽</p>
+<p>将子组件中的数据交给父组件，父组件通过操作替换子组件slot ，在父组件使用中使用<template scope="name"> </template> name将会获取子组件中传来的数据，在里面使用只需用name.xxx即可，xxx是子组件绑定的属性名</p>
+<h3 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h3><p>打包工具， 将一些浏览器不支持的文件打包转变成浏览器可以支持的，让我们能够进行模块化开发，并且能帮助我们处理模块间的依赖关系。</p>
+<p>webpack与gulp的对比，gulp的核心是Task，我们配置一系列task，定义要处理的事物(scss转css,图片压缩等),gulp执行这些task，让整个流程自动化，gulp也称前端自动化任务管理工具。如果工程模块依赖简单，没有用到模块化，只需要简单的合并、压缩就可以用gulp。</p>
+<p>gulp强调前端流程自动化，webpack强调模块化开发管理，文件压缩合并，预处理等是他附带的功能。</p>
+<p>本地安装 ：npm i  webpack -D </p>
+<p>webpack.config.js来配置webpack</p>
+<p>loader 来加载css、图片，将一些高级es6-&gt;es5等</p>
+<p>使用：用npm安装需要的对应的loader，在webpack.config.js中的module下进行配置</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    entry<span class="token punctuation">:</span> <span class="token string">'./src/main.js'</span><span class="token punctuation">,</span>  <span class="token comment" spellcheck="true">//打包入口文件</span>
+    output<span class="token punctuation">:</span><span class="token punctuation">{</span>            <span class="token comment" spellcheck="true">//生成文件</span>
+        path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'dist'</span><span class="token punctuation">)</span>，<span class="token comment" spellcheck="true">//目录 ，resolve把当前目录解析为绝对路径</span>
+        filename<span class="token punctuation">:</span><span class="token string">'xxxx.js'</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//输出文件</span>
+        publicPath<span class="token punctuation">:</span> <span class="token string">'dist/'</span> <span class="token comment" spellcheck="true">//涉及到url的代码，都会在前面加上这个路径,如果使用下面的html插件就不用写这句话了</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    module<span class="token punctuation">:</span><span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//正则表达式</span>
+                <span class="token comment" spellcheck="true">//css-loader只负责将css文件进行加载</span>
+                <span class="token comment" spellcheck="true">//style-loader负责将样式添加到DOM中</span>
+                <span class="token comment" spellcheck="true">//使用多个loader时，处理是从右向左进行的</span>
+                use<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'style-loader'</span><span class="token punctuation">,</span><span class="token string">'css-loader'</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">//顺序不能乱</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.less$/</span><span class="token punctuation">,</span>
+                use<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+                    loader<span class="token punctuation">:</span> <span class="token string">'style-loader'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                    loader<span class="token punctuation">:</span> <span class="token string">'css-loader'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                    loader<span class="token punctuation">:</span> <span class="token string">'less-loader'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.(png|jpg|gif|jpeg)$/</span><span class="token punctuation">,</span>
+                use<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+                    loader<span class="token punctuation">:</span> <span class="token string">'url-loader'</span><span class="token punctuation">,</span>
+                    options<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                        <span class="token comment" spellcheck="true">//当加载图片小于limit时，会将图片编译成base64字符串形式，当加载图片大于limit时，需要使用file-loader模块进行加载，将图片重新加载到dist文件夹下</span>
+                        limit<span class="token punctuation">:</span><span class="token number">8192</span><span class="token punctuation">,</span>
+                        name<span class="token punctuation">:</span> <span class="token string">'img/[name].[hash:8].[ext]'</span> <span class="token comment" spellcheck="true">//[name]会保留图片之前的名字,hash:8为了让图片不重名</span>
+                    <span class="token punctuation">}</span>          
+                <span class="token punctuation">}</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.m?js$/</span><span class="token punctuation">,</span>
+                exclude<span class="token punctuation">:</span> <span class="token regex">/(node_modules)|bower_components)/</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//排除这些文件</span>
+                use<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                     loader<span class="token punctuation">:</span><span class="token string">'babel-loader'</span><span class="token punctuation">,</span>
+                    options<span class="token punctuation">:</span><span class="token punctuation">{</span>
+                        presets<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'es2015'</span><span class="token punctuation">]</span>
+                    <span class="token punctuation">}</span>
+                 <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>loader和plugin的区别 </p>
+<p>loader主要用于转换某些类型的模块，plugin是对webpack本身的扩展</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+module<span class="token punctuation">.</span><span class="token keyword">export</span><span class="token operator">=</span><span class="token punctuation">{</span>
+    plugins<span class="token punctuation">:</span><span class="token punctuation">[</span>
+        <span class="token comment" spellcheck="true">//添加版权插件</span>
+        <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>BannerPlugin</span><span class="token punctuation">(</span><span class="token string">'最终版权归xxx所有'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//打包html插件到dist文件中,并且将打包的js文件自动通过script标签插入到body中</span>
+        <span class="token keyword">new</span> <span class="token class-name">htmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            template<span class="token punctuation">:</span><span class="token string">'index.html'</span> <span class="token comment" spellcheck="true">//template表示根据什么模板来生成index.html</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//js压缩插件</span>
+        <span class="token keyword">new</span> <span class="token class-name">uglifyjsWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="Vue中template和el的关系"><a href="#Vue中template和el的关系" class="headerlink" title="Vue中template和el的关系"></a>Vue中template和el的关系</h3><p>开发中，如果Vue实例中 既有 el，又有template，那么在Vue的解析中，template中的标签元素会替代el绑定根元素</p>
+<h3 id="vue-cli-3-与-2-版本区别"><a href="#vue-cli-3-与-2-版本区别" class="headerlink" title="vue-cli 3 与 2 版本区别"></a>vue-cli 3 与 2 版本区别</h3><p>vue-cli3是基于webpack4 打造，vue-cli是webpack3</p>
+<p>vue-cli3设计原则：0配置，移除了根目录下的build和config等配置文件目录</p>
+<p>vue-cli3提供了vue ui命令，可视化配置</p>
+<p>移除了static文件夹，增加了public文件夹，并且index.html移动到了public</p>
+<p>vue-cli2初始化项目：vue init webpack xxxx</p>
+<p>vue-cli3初始化项目 ：vue create xxxx</p>
+<h3 id="前端渲染和后端渲染"><a href="#前端渲染和后端渲染" class="headerlink" title="前端渲染和后端渲染"></a>前端渲染和后端渲染</h3><p>后端渲染：服务器直接生产渲染好对应的HTML页面返回给客户端进行展示</p>
+<p>后端路由：后端处理URL和页面之间的映射关系，缺点：整个页面的模块由后端人员来编写和维护。前端开发人员如果要开发页面，需要使用PHP和Java等语言来编写页面代码。HTML代码和数据以及对应的逻辑混在一起，使编写和维护十分糟糕。</p>
+<p>前后端分离：随着Ajax的出现，有了前后端分离的开发模式。后端只提供API来返回数据，前端通过Ajax获取数据，通过js将数据渲染到页面中</p>
+<p>前端渲染：浏览器中显示的网页中的大部分内容都由前端写的js代码在浏览器中执行，最后渲染在页面上</p>
+<p>前端路由：静态资源服务器只有一整套的index.html+css+js，前端路由通过生成url去下载好的静态资源中找对应的html+css+js</p>
+<p>SPA页面：单页面富应用，整个网页只有一个html页面，在前后端分离的基础上加了一层前端路由</p>
+<h3 id="如何改变页面url地址而不使页面刷新"><a href="#如何改变页面url地址而不使页面刷新" class="headerlink" title="如何改变页面url地址而不使页面刷新"></a>如何改变页面url地址而不使页面刷新</h3><p>harh模式</p>
+<p>1.通过location.hash = ‘xxxxx’  </p>
+<p>history模式</p>
+<p>2.通过history.pushState( {}, ‘’, ‘xxxx’)  这个操作类似于栈的操作，push和back</p>
+<p>3.通过history.replaceState( {},’’ ‘xxxx’ )  替换，不能点回退键</p>
 
             </div>
             <hr/>
@@ -1192,49 +1301,41 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/06/vue/vue2/">
+                <a href="/2021/11/10/javascript/js-problem/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Vue2-学习笔记">
                         
-                        <span class="card-title">Vue2-学习笔记</span>
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue中的MVVMMVC : Model、View、Controller,表示数据、视图、控制器。Model：数据模型，用来存储数据。View：视图界面，用来展示UI界面和响应用户交互。Controller:控制器，监听模型数据的改变和控制
+                            1.js中的addEventListener使用&lt;!DOCTYPE html>
+&lt;html lang="en">
+
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta htt
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-10
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Vue/" class="post-category">
-                                    Vue
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            小蓝
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1424,9 +1525,15 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <footer class="page-footer bg-color">
+    <!--
+ * @Date: 2021-08-24 16:02:33
+ * @LastEditors: xiaolan
+ * @LastEditTime: 2021-11-12 11:50:09
+ * @FilePath: \hexo-theme-matery\layout\_partial\footer.ejs
+-->
+<footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+    <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -1480,7 +1587,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
 
     
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    <div class="container row center-align"
+        style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2021</span>
@@ -1490,7 +1598,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.6k</span>&nbsp;字
+                class="white-color">22.3k</span>&nbsp;字
             
             
             
@@ -1589,11 +1697,15 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 </div>
+        <div class="beian">
+            <p>
+                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" >蜀ICP备2021028006号</a>
+            </p>
+        </div>
     </div>
 </footer>
 
 <div class="progress-bar"></div>
-
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
