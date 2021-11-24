@@ -31,9 +31,9 @@
     <script src="/libs/jquery/jquery.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="小蓝的窝" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="小蓝的窝" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -467,14 +467,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-23
+                    2021-11-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    856
+                    999
                 </div>
                 
 
@@ -590,52 +590,79 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>①从数组中选择中间的项作为主元</p>
 <p>②创建左右指针指向数组头和尾，右移左指针找到一个比主元大的元素，左移右指针，找到一个比主元小的元素，交换他们，重复这个过程，直到左指针超过了右指针。此时，比主元小的值都排在主元之前，比主元大的值都排在主元之后。</p>
 <p>③开始递归，重复之前的步骤，直到数组已经完全排序</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">quickSorting</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//主元</span>
-        <span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token function">partition</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//以开头为基准，实现方式一：</span>
+<span class="token keyword">function</span> <span class="token function">quickSorting</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> l <span class="token operator">=</span> left<span class="token punctuation">,</span>    r <span class="token operator">=</span> right
+        <span class="token comment" spellcheck="true">//默认arr[l]为基准元素</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">>=</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                r<span class="token operator">--</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">let</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+            arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                l<span class="token operator">++</span>
+            <span class="token punctuation">}</span>
+            temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+            arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+        <span class="token punctuation">}</span>
+        <span class="token keyword">let</span> index <span class="token operator">=</span> l
         
-        <span class="token keyword">if</span><span class="token punctuation">(</span>left <span class="token operator">&lt;</span> index<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token function">quickSorting</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>index<span class="token number">-1</span><span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>index <span class="token operator">&lt;</span> right<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token function">quickSorting</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>index<span class="token punctuation">,</span>right<span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
+        <span class="token function">quickSorting</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> left<span class="token punctuation">,</span> index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">quickSorting</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> right<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> arr
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">//划分</span>
-<span class="token keyword">function</span> partition <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">var</span> midValue <span class="token operator">=</span> arr<span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token punctuation">(</span>right<span class="token operator">+</span>left<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&lt;</span> midValue<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            left<span class="token operator">++</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span>midValue <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            right<span class="token operator">--</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>left<span class="token operator">&lt;=</span>right<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">let</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
-            arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
-            arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">=</span> temp
-            left<span class="token operator">++</span>
-            right<span class="token operator">--</span>
+
+<span class="token comment" spellcheck="true">//实现方式二：</span>
+<span class="token keyword">function</span> <span class="token function">quickSortingNew</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arr
+    <span class="token keyword">let</span> larr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        rarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        base <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> base<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            larr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            rarr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> left
+    <span class="token keyword">return</span> <span class="token function">quickSortingNew</span><span class="token punctuation">(</span>larr<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>base<span class="token punctuation">,</span> <span class="token function">quickSortingNew</span><span class="token punctuation">(</span>rarr<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">quickSorting</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//[1,2,3,4,5,6,7] 下面图解了一下过程</span>
+
+<span class="token comment" spellcheck="true">//测试运行时间：</span>
+<span class="token comment" spellcheck="true">//生成不重复随机数</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> q <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100000</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> date1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">quickSorting</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> arr1<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> date2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>date2 <span class="token operator">-</span> date1 <span class="token operator">+</span> <span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">test1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    
+<span class="token keyword">function</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> date1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">quickSortingNew</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> date2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>date2 <span class="token operator">-</span> date1 <span class="token operator">+</span> <span class="token string">'ms'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">test2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//由下图可见当大数组时，传统的快速排序时间要小于下面的改进版快速排序</span>
 </code></pre>
+<p><img src="/2021/11/23/shujujiegou/8-pai-xu/10.png"></p>
 <p>时间复杂度O(nlogn)，性能比其他排序算法好。</p>
-<p>第一次:</p>
-<p><img src="/2021/11/23/shujujiegou/8-pai-xu/5.png"></p>
-<p>第二次：</p>
-<p><img src="/2021/11/23/shujujiegou/8-pai-xu/6.jpg"></p>
-<p>第三次：</p>
-<p><img src="/2021/11/23/shujujiegou/8-pai-xu/7.png"></p>
-<p>第四次：</p>
-<p><img src="/2021/11/23/shujujiegou/8-pai-xu/8.png"></p>
-<p>第五次+第六次：</p>
-<p><img src="/2021/11/23/shujujiegou/8-pai-xu/9.png"></p>
 
             </div>
             <hr/>
@@ -1515,7 +1542,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">23.3k</span>&nbsp;字
+                class="white-color">23.4k</span>&nbsp;字
             
             
             
