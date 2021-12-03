@@ -21,19 +21,19 @@
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/aos/2.3.4/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/lightgallery/1.6.11/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="小蓝的窝" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="小蓝的窝" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -331,7 +331,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/tocbot/4.17.0/tocbot.min.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-06
+                    2021-11-25
                 </div>
                 
 
@@ -497,13 +497,13 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>图是一组由边连接的节点。</p>
-<p><img src="/2021/11/04/shujujiegou/7-tu/Chart/chart1.png"></p>
+<p><img src="/2021/11/04/shujujiegou/7-tu/chart1.png"></p>
 <p>图的相关概念：<br>由一条边连接在一起的顶点称为相邻顶点。</p>
 <p>一个顶点的度是其相邻顶点的数量。<br>路径是顶点v1,v2,….vk的一个连续序列。途中包含路径：A B E I 和 A C D G</p>
 <p>简单路径：要求不包含重复的顶点。</p>
 <p>若图中不存在环，则称图是无环的。如果图中每两个顶点间都存在路径，则图是连通的。</p>
 <p>有向图</p>
-<p><img src="/2021/11/04/shujujiegou/7-tu/Chart/chart2.png"></p>
+<p><img src="/2021/11/04/shujujiegou/7-tu/chart2.png"></p>
 <p>如果图中每两个顶点间都在双向上都存在路径，则图是强连通的。</p>
 <p>图的表示：邻接矩阵、邻接表、关联矩阵。</p>
 <pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//创建图类，可以看作是一个邻接表</span>
@@ -558,7 +558,7 @@ graph<span class="token punctuation">.</span><span class="token function">addEdg
 graph<span class="token punctuation">.</span><span class="token function">addEdge</span><span class="token punctuation">(</span><span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'F'</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>graph<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="/2021/11/04/shujujiegou/7-tu/chart/chart3.jpg"></p>
+<p><img src="/2021/11/04/shujujiegou/7-tu/chart3.jpg"></p>
 <h3 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h3><p>算法思想：必须追踪每个第一次访问的节点，并且追踪有哪些节点还没有被完全探索。</p>
 <p>完全搜索一个顶点要求我们查看该顶点的每一条边。对于每一条边所连接的没有被访问过的顶点，将其标标注为被发现的，并将其加进待访问顶点列表中。</p>
 <p>深度优先搜索 (dfs)  运用的数据结构为栈   思想：通过将顶点存入栈中、顶点是沿着路径被探索的，存在新的相邻顶点就去访问。</p>
@@ -681,7 +681,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//输出见下</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p><img src="/2021/11/04/shujujiegou/7-tu/Chart/chart4.png"></p>
+<p><img src="/2021/11/04/shujujiegou/7-tu/chart4.png"></p>
 <p>使用DFS构建”森林”(有限树的一个集合)以及一组源顶点(根),返回两个数组：发现时间和完成探索世界</p>
 <pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token keyword">this</span><span class="token punctuation">.</span>DFS <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -965,7 +965,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.css">
 <link rel="stylesheet" href="/css/my-gitalk.css">
 
 <div class="card gitalk-card" data-aos="fade-up">
@@ -976,7 +976,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
+<script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
         clientID: 'fd9eb78f701df0cfc276',
@@ -1250,7 +1250,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1484,7 +1484,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.staticfile.org/tocbot/4.17.0/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1575,7 +1575,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 -->
 <footer class="page-footer bg-color">
     
-    <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/plyr/3.6.9/plyr.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -1625,7 +1625,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.staticfile.org/plyr/3.6.9/plyr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
 
     
@@ -1640,7 +1640,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">23.4k</span>&nbsp;字
+                class="white-color">24.1k</span>&nbsp;字
             
             
             
@@ -1778,11 +1778,11 @@ $(function () {
 
     
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.staticfile.org/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.staticfile.org/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.staticfile.org/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.staticfile.org/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+    <script src="https://cdn.staticfile.org/lightgallery/1.6.11/js/lightgallery.min.js"></script>
     <script src="/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
@@ -1828,7 +1828,7 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
     
 
      <!-- 动画加载 -->
@@ -1838,33 +1838,6 @@ $(function () {
  * @LastEditTime: 2021-11-23 16:37:44
  * @FilePath: \themes\hexo-theme-matery\layout\_widget\load.ejs
 -->
-
-<!-- <div id='loader' class="out">
-    <div class="fade-in">
-        <div class="load_container">
-            <div class="one common"></div>
-            <div class="two common"></div>
-            <div class="three common"></div>
-            <div class="four common"></div>
-            <div class="five common"></div>
-            <div class="six common"></div>
-            <div class="seven common"></div>
-            <div class="eight common"></div>
-        </div>
-        <div class="bar">
-            <div class="progress"></div>
-        </div>
-    </div>
-</div>
-
-<script>
-    var endLoading = function () {
-    
-        document.getElementById('loader').style.overflow = 'hidden';
-        document.getElementById('loader').remove();
-    }
-    window.addEventListener('load', endLoading);
-</script> -->
  -->
 
 </body>

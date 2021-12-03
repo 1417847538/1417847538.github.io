@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数据结构_排序_js-笔记, xulongze,github">
+    <meta name="keywords" content="数据结构_排序+搜索_js-笔记, xulongze,github">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,23 +17,23 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据结构_排序_js-笔记 | 小蓝的窝</title>
+    <title>数据结构_排序+搜索_js-笔记 | 小蓝的窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/aos/2.3.4/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/lightgallery/1.6.11/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
     <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="小蓝的窝" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="小蓝的窝" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -318,7 +318,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据结构_排序_js-笔记</h1>
+                    <h1 class="description center-align post-title">数据结构_排序+搜索_js-笔记</h1>
                 </div>
             </div>
         </div>
@@ -331,7 +331,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/tocbot/4.17.0/tocbot.min.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -467,21 +467,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-24
+                    2021-11-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    999
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -663,6 +663,52 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </code></pre>
 <p><img src="/2021/11/23/shujujiegou/8-pai-xu/10.png"></p>
 <p>时间复杂度O(nlogn)，性能比其他排序算法好。</p>
+<h3 id="六、DFS"><a href="#六、DFS" class="headerlink" title="六、DFS"></a>六、DFS</h3><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//递归版dfs</span>
+<span class="token keyword">function</span> <span class="token function">DFS</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span>nodeList<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        nodeList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+        <span class="token keyword">let</span> childrenList <span class="token operator">=</span> node<span class="token punctuation">.</span>children
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> childrenList<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token function">DFS</span><span class="token punctuation">(</span>childrenList<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>nodeList<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> nodeList
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//非递归dfs</span>
+<span class="token keyword">function</span> <span class="token function">fDFS</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> nodeList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">!==</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">let</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span>length <span class="token operator">!==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">let</span> item <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            nodeList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+            <span class="token keyword">let</span> childrenList <span class="token operator">=</span> item<span class="token punctuation">.</span>children
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> childrenList<span class="token punctuation">.</span>length<span class="token number">-1</span><span class="token punctuation">;</span> i<span class="token operator">>=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>childrenList<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> nodeList
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="七、BFS"><a href="#七、BFS" class="headerlink" title="七、BFS"></a>七、BFS</h3><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//常规都是非递归</span>
+<span class="token keyword">function</span> <span class="token function">fBFS</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> nodeList <span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token operator">!==</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token keyword">let</span> queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+       <span class="token keyword">while</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span>length<span class="token operator">!==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token keyword">let</span> item <span class="token operator">=</span> queue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+           nodeList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+           <span class="token keyword">let</span> childrenList <span class="token operator">=</span> item<span class="token punctuation">.</span>children
+           <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>childrenList<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+              queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>childrenList<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+           <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> nodeList
+<span class="token punctuation">}</span>
+</code></pre>
 
             </div>
             <hr/>
@@ -876,7 +922,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.css">
 <link rel="stylesheet" href="/css/my-gitalk.css">
 
 <div class="card gitalk-card" data-aos="fade-up">
@@ -887,7 +933,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
+<script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
         clientID: 'fd9eb78f701df0cfc276',
@@ -1161,7 +1207,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1243,50 +1289,51 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/23/shujujiegou/8-pai-xu/">
+                <a href="/2021/11/28/suanfa/suanfa/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="数据结构_排序_js-笔记">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="算法_js-笔记">
                         
-                        <span class="card-title">数据结构_排序_js-笔记</span>
+                        <span class="card-title">算法_js-笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、冒泡排序function bubbleSorting(arr){
-    let length = arr.length
-    for(let i = 0; i&lt;length-1; i++ ){
-        //j为什么小于
+                            一、斐波那契1、递归function fn(n) {
+    if (n === 1 || n === 2) {
+        return 1
+    }
+    return fn(n - 1) + fn(n - 2)
+}
+conso
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                    数据结构
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -1386,7 +1433,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.staticfile.org/tocbot/4.17.0/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1477,7 +1524,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 -->
 <footer class="page-footer bg-color">
     
-    <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/plyr/3.6.9/plyr.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -1527,7 +1574,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.staticfile.org/plyr/3.6.9/plyr.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
 
     
@@ -1542,7 +1589,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">23.4k</span>&nbsp;字
+                class="white-color">24.1k</span>&nbsp;字
             
             
             
@@ -1680,11 +1727,11 @@ $(function () {
 
     
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.staticfile.org/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.staticfile.org/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.staticfile.org/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.staticfile.org/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+    <script src="https://cdn.staticfile.org/lightgallery/1.6.11/js/lightgallery.min.js"></script>
     <script src="/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
@@ -1730,7 +1777,7 @@ $(function () {
     
 
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
     
 
      <!-- 动画加载 -->
@@ -1740,33 +1787,6 @@ $(function () {
  * @LastEditTime: 2021-11-23 16:37:44
  * @FilePath: \themes\hexo-theme-matery\layout\_widget\load.ejs
 -->
-
-<!-- <div id='loader' class="out">
-    <div class="fade-in">
-        <div class="load_container">
-            <div class="one common"></div>
-            <div class="two common"></div>
-            <div class="three common"></div>
-            <div class="four common"></div>
-            <div class="five common"></div>
-            <div class="six common"></div>
-            <div class="seven common"></div>
-            <div class="eight common"></div>
-        </div>
-        <div class="bar">
-            <div class="progress"></div>
-        </div>
-    </div>
-</div>
-
-<script>
-    var endLoading = function () {
-    
-        document.getElementById('loader').style.overflow = 'hidden';
-        document.getElementById('loader').remove();
-    }
-    window.addEventListener('load', endLoading);
-</script> -->
  -->
 
 </body>
