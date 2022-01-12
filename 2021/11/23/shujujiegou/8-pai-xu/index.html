@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-26
+                    2021-12-29
                 </div>
                 
 
@@ -596,18 +596,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <span class="token keyword">let</span> l <span class="token operator">=</span> left<span class="token punctuation">,</span>    r <span class="token operator">=</span> right
         <span class="token comment" spellcheck="true">//默认arr[l]为基准元素</span>
         <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">>=</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 r<span class="token operator">--</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">let</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
-            arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
-            arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token punctuation">[</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
             <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 l<span class="token operator">++</span>
             <span class="token punctuation">}</span>
-            temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
-            arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
-            arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+            <span class="token punctuation">[</span> arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span> arr<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">let</span> index <span class="token operator">=</span> l
         
@@ -922,33 +918,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
     </div>
 
     
-        <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'fd9eb78f701df0cfc276',
-        clientSecret: '4a52ca4f326f8697795d4d5365e850d501a64c0b',
-        repo: '1417847538.github.io',
-        owner: '1417847538',
-        admin: ['1417847538'],
-        id: 'matery',  
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
-
-    
 
     
 
@@ -1207,7 +1176,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1296,21 +1265,20 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 <a href="/2021/11/28/suanfa/suanfa/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="算法_js-笔记">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="算法-笔记">
                         
-                        <span class="card-title">算法_js-笔记</span>
+                        <span class="card-title">算法-笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、斐波那契1、递归function fn(n) {
+                            一、斐波那契(easy)1、递归function fn(n) {
     if (n === 1 || n === 2) {
         return 1
     }
     return fn(n - 1) + fn(n - 2)
 }
-conso
                         
                     </div>
                     <div class="publish-info">
@@ -1350,10 +1318,9 @@ conso
                 <a href="/2021/11/10/javascript/js-problem/">
                     <div class="card-image">
                         
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="我自己遇到的问题-js笔记">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">我自己遇到的问题-js笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1373,11 +1340,23 @@ conso
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            小蓝
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1519,64 +1498,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <!--
  * @Date: 2021-08-24 16:02:33
  * @LastEditors: xiaolan
- * @LastEditTime: 2021-11-12 11:50:09
- * @FilePath: \hexo-theme-matery\layout\_partial\footer.ejs
+ * @LastEditTime: 2022-01-12 15:14:17
+ * @FilePath: \Blog\themes\hexo-theme-matery\layout\_partial\footer.ejs
 -->
 <footer class="page-footer bg-color">
-    
-    <link rel="stylesheet" href="https://cdn.staticfile.org/plyr/3.6.9/plyr.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="6935777368"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.1'
-                   list-folded='false'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="https://cdn.staticfile.org/plyr/3.6.9/plyr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-
     
     <div class="container row center-align"
         style="margin-bottom: 15px !important;">
@@ -1589,7 +1514,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">24.1k</span>&nbsp;字
+                class="white-color">32k</span>&nbsp;字
             
             
             
@@ -1655,6 +1580,11 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
             <br>
             
+            <span id="icp"><img src="/medias/icp.png"
+                    style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">蜀ICP备2021028006号</a>
+            </span>
+            
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/1417847538" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
@@ -1688,11 +1618,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 </div>
-        <div class="beian">
-            <p>
-                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" >蜀ICP备2021028006号</a>
-            </p>
-        </div>
     </div>
 </footer>
 
@@ -1779,15 +1704,6 @@ $(function () {
     
     <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
     
-
-     <!-- 动画加载 -->
-     <!-- <!--
- * @Date: 2021-08-26 01:28:23
- * @LastEditors: xiaolan
- * @LastEditTime: 2021-11-23 16:37:44
- * @FilePath: \themes\hexo-theme-matery\layout\_widget\load.ejs
--->
- -->
 
 </body>
 

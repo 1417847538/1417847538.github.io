@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法_js-笔记, xulongze,github">
+    <meta name="keywords" content="算法-笔记, xulongze,github">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法_js-笔记 | 小蓝的窝</title>
+    <title>算法-笔记 | 小蓝的窝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -318,7 +318,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法_js-笔记</h1>
+                    <h1 class="description center-align post-title">算法-笔记</h1>
                 </div>
             </div>
         </div>
@@ -467,14 +467,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-28
+                    2022-01-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    118
+                    319
                 </div>
                 
 
@@ -496,7 +496,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="一、斐波那契"><a href="#一、斐波那契" class="headerlink" title="一、斐波那契"></a>一、斐波那契</h3><h4 id="1、递归"><a href="#1、递归" class="headerlink" title="1、递归"></a>1、递归</h4><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <h3 id="一、斐波那契-easy"><a href="#一、斐波那契-easy" class="headerlink" title="一、斐波那契(easy)"></a>一、斐波那契(easy)</h3><h4 id="1、递归"><a href="#1、递归" class="headerlink" title="1、递归"></a>1、递归</h4><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">||</span> n <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token number">1</span>
     <span class="token punctuation">}</span>
@@ -527,6 +527,49 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token keyword">return</span> dp<span class="token punctuation">[</span>num<span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fnnn</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//8</span>
+</code></pre>
+<h3 id="二、用递归算法实现数组长度为5且元素的随机数在2-32间不重复的值"><a href="#二、用递归算法实现数组长度为5且元素的随机数在2-32间不重复的值" class="headerlink" title="二、用递归算法实现数组长度为5且元素的随机数在2-32间不重复的值"></a>二、用递归算法实现数组长度为5且元素的随机数在2-32间不重复的值</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">function</span> <span class="token function">insertArr</span><span class="token punctuation">(</span>len<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> min <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> max <span class="token operator">=</span> <span class="token number">32</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> num <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>length <span class="token operator">!==</span> len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">insertArr</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token function">insertArr</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="三、实现字符串加密解密"><a href="#三、实现字符串加密解密" class="headerlink" title="三、实现字符串加密解密"></a>三、实现字符串加密解密</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">'abcdefg'</span>
+<span class="token comment" spellcheck="true">//利用全局函数</span>
+<span class="token keyword">const</span> mstr <span class="token operator">=</span> <span class="token function">btoa</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+<span class="token keyword">const</span> jstr <span class="token operator">=</span> <span class="token function">atob</span><span class="token punctuation">(</span>mstr<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mstr<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>jstr<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">//自己实现函数</span>
+<span class="token keyword">const</span> encode <span class="token operator">=</span> <span class="token punctuation">(</span>str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">,</span> padding <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">!</span>str <span class="token operator">?</span> str <span class="token punctuation">:</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>s <span class="token operator">=</span><span class="token operator">></span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> padding<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> decode <span class="token operator">=</span> <span class="token punctuation">(</span>str <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">,</span> padding <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">!</span>str <span class="token operator">?</span> str <span class="token punctuation">:</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>s <span class="token operator">=</span><span class="token operator">></span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> padding<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> mmstr <span class="token operator">=</span> <span class="token function">encode</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+<span class="token keyword">const</span> jjstr <span class="token operator">=</span> <span class="token function">decode</span><span class="token punctuation">(</span>mmstr<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mmstr<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>jjstr<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="四、用递归的方法求数组的深度"><a href="#四、用递归的方法求数组的深度" class="headerlink" title="四、用递归的方法求数组的深度"></a>四、用递归的方法求数组的深度</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">numDepth</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> depth<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>constructor <span class="token operator">!==</span> Array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> depth
+    <span class="token punctuation">}</span>
+    <span class="token keyword">let</span> max <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> item <span class="token keyword">of</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> itemDepth <span class="token operator">=</span> <span class="token function">numDepth</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> depth <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>max<span class="token punctuation">,</span> itemDepth<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> max
+<span class="token punctuation">}</span>
 </code></pre>
 
             </div>
@@ -739,33 +782,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
             
         </div>
     </div>
-
-    
-        <link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'fd9eb78f701df0cfc276',
-        clientSecret: '4a52ca4f326f8697795d4d5365e850d501a64c0b',
-        repo: '1417847538.github.io',
-        owner: '1417847538',
-        admin: ['1417847538'],
-        id: 'matery',  
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
 
     
 
@@ -1026,7 +1042,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.staticfile.org/valine/1.4.16/Valine.min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1108,35 +1124,30 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/28/suanfa/suanfa/">
+                <a href="/2022/01/06/suanfa/weiyunsuan/">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="算法_js-笔记">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="位运算-笔记">
                         
-                        <span class="card-title">算法_js-笔记</span>
+                        <span class="card-title">位运算-笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、斐波那契1、递归function fn(n) {
-    if (n === 1 || n === 2) {
-        return 1
-    }
-    return fn(n - 1) + fn(n - 2)
-}
-conso
+                            LeetCode.29  两数相除（mid）给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。
+返回被除数 dividend 除以除数 divisor 得到的商。
+整数除法的
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-06
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1149,7 +1160,6 @@ conso
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1349,64 +1359,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <!--
  * @Date: 2021-08-24 16:02:33
  * @LastEditors: xiaolan
- * @LastEditTime: 2021-11-12 11:50:09
- * @FilePath: \hexo-theme-matery\layout\_partial\footer.ejs
+ * @LastEditTime: 2022-01-12 15:14:17
+ * @FilePath: \Blog\themes\hexo-theme-matery\layout\_partial\footer.ejs
 -->
 <footer class="page-footer bg-color">
-    
-    <link rel="stylesheet" href="https://cdn.staticfile.org/plyr/3.6.9/plyr.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="6935777368"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.1'
-                   list-folded='false'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="https://cdn.staticfile.org/plyr/3.6.9/plyr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
-
     
     <div class="container row center-align"
         style="margin-bottom: 15px !important;">
@@ -1419,7 +1375,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">24.1k</span>&nbsp;字
+                class="white-color">32k</span>&nbsp;字
             
             
             
@@ -1485,6 +1441,11 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
             <br>
             
+            <span id="icp"><img src="/medias/icp.png"
+                    style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">蜀ICP备2021028006号</a>
+            </span>
+            
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/1417847538" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
@@ -1518,11 +1479,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 </div>
-        <div class="beian">
-            <p>
-                <a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/" >蜀ICP备2021028006号</a>
-            </p>
-        </div>
     </div>
 </footer>
 
@@ -1609,15 +1565,6 @@ $(function () {
     
     <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
     
-
-     <!-- 动画加载 -->
-     <!-- <!--
- * @Date: 2021-08-26 01:28:23
- * @LastEditors: xiaolan
- * @LastEditTime: 2021-11-23 16:37:44
- * @FilePath: \themes\hexo-theme-matery\layout\_widget\load.ejs
--->
- -->
 
 </body>
 

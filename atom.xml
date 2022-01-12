@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>小蓝的窝</title>
   
-  <subtitle>川大李知恩男友</subtitle>
+  
   <link href="http://xiaolan1.icu/atom.xml" rel="self"/>
   
   <link href="http://xiaolan1.icu/"/>
-  <updated>2021-11-28T05:05:59.812Z</updated>
+  <updated>2022-01-12T03:18:05.396Z</updated>
   <id>http://xiaolan1.icu/</id>
   
   <author>
@@ -17,11 +17,136 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>算法_js-笔记</title>
+    <title>贪心算法-笔记</title>
+    <link href="http://xiaolan1.icu/2022/01/12/suanfa/tanxin/"/>
+    <id>http://xiaolan1.icu/2022/01/12/suanfa/tanxin/</id>
+    <published>2022-01-12T02:46:08.702Z</published>
+    <updated>2022-01-12T03:18:05.396Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前缀和-笔记</title>
+    <link href="http://xiaolan1.icu/2022/01/11/suanfa/qianzhuihe/"/>
+    <id>http://xiaolan1.icu/2022/01/11/suanfa/qianzhuihe/</id>
+    <published>2022-01-10T17:00:40.767Z</published>
+    <updated>2022-01-11T04:21:40.739Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些找规律有关数学的公式题-笔记</title>
+    <link href="http://xiaolan1.icu/2022/01/08/suanfa/gongshiti/"/>
+    <id>http://xiaolan1.icu/2022/01/08/suanfa/gongshiti/</id>
+    <published>2022-01-08T03:23:53.953Z</published>
+    <updated>2022-01-08T03:41:03.785Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>双指针+滑动窗口-笔记</title>
+    <link href="http://xiaolan1.icu/2022/01/07/suanfa/shuangzhizhen/"/>
+    <id>http://xiaolan1.icu/2022/01/07/suanfa/shuangzhizhen/</id>
+    <published>2022-01-07T06:40:50.349Z</published>
+    <updated>2022-01-12T07:03:28.160Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>位运算-笔记</title>
+    <link href="http://xiaolan1.icu/2022/01/06/suanfa/weiyunsuan/"/>
+    <id>http://xiaolan1.icu/2022/01/06/suanfa/weiyunsuan/</id>
+    <published>2022-01-06T04:03:00.598Z</published>
+    <updated>2022-01-08T03:24:53.893Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://xiaolan1.icu/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法-笔记</title>
     <link href="http://xiaolan1.icu/2021/11/28/suanfa/suanfa/"/>
     <id>http://xiaolan1.icu/2021/11/28/suanfa/suanfa/</id>
     <published>2021-11-28T05:00:22.200Z</published>
-    <updated>2021-11-28T05:05:59.812Z</updated>
+    <updated>2022-01-11T06:09:23.451Z</updated>
     
     
       
@@ -46,7 +171,7 @@
     <link href="http://xiaolan1.icu/2021/11/23/shujujiegou/8-pai-xu/"/>
     <id>http://xiaolan1.icu/2021/11/23/shujujiegou/8-pai-xu/</id>
     <published>2021-11-23T06:19:20.359Z</published>
-    <updated>2021-11-26T02:07:21.330Z</updated>
+    <updated>2021-12-29T13:59:37.581Z</updated>
     
     
       
@@ -67,11 +192,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>我自己遇到的问题-js笔记</title>
     <link href="http://xiaolan1.icu/2021/11/10/javascript/js-problem/"/>
     <id>http://xiaolan1.icu/2021/11/10/javascript/js-problem/</id>
     <published>2021-11-10T10:54:25.057Z</published>
-    <updated>2021-11-23T03:19:34.073Z</updated>
+    <updated>2022-01-07T13:10:47.939Z</updated>
     
     
       
@@ -84,6 +209,10 @@
     
     
     
+    <category term="JavaScript" scheme="http://xiaolan1.icu/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="http://xiaolan1.icu/tags/JavaScript/"/>
     
   </entry>
   
@@ -267,7 +396,7 @@
     <link href="http://xiaolan1.icu/2021/10/26/html-css/html-css-mianshi/"/>
     <id>http://xiaolan1.icu/2021/10/26/html-css/html-css-mianshi/</id>
     <published>2021-10-26T04:25:13.157Z</published>
-    <updated>2021-10-29T15:31:00.042Z</updated>
+    <updated>2022-01-08T07:55:27.727Z</updated>
     
     
       
@@ -288,11 +417,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>js面试-js学习笔记</title>
     <link href="http://xiaolan1.icu/2021/10/19/javascript/js-mianshi/"/>
     <id>http://xiaolan1.icu/2021/10/19/javascript/js-mianshi/</id>
     <published>2021-10-19T10:25:17.249Z</published>
-    <updated>2021-11-30T06:52:45.755Z</updated>
+    <updated>2022-01-11T16:11:00.592Z</updated>
     
     
       
@@ -305,6 +434,10 @@
     
     
     
+    <category term="JavaScript" scheme="http://xiaolan1.icu/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="http://xiaolan1.icu/tags/JavaScript/"/>
     
   </entry>
   
@@ -380,56 +513,6 @@
     
     
     <category term="JavaScript" scheme="http://xiaolan1.icu/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>github+git+hexo-matery博客搭建(最详细教程)</title>
-    <link href="http://xiaolan1.icu/2021/08/27/github-git-hexo-matery/"/>
-    <id>http://xiaolan1.icu/2021/08/27/github-git-hexo-matery/</id>
-    <published>2021-08-27T08:23:06.269Z</published>
-    <updated>2021-11-23T09:00:07.255Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="hexo" scheme="http://xiaolan1.icu/categories/hexo/"/>
-    
-    
-    <category term="hexo" scheme="http://xiaolan1.icu/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hello world!</title>
-    <link href="http://xiaolan1.icu/2021/08/24/hello-world/"/>
-    <id>http://xiaolan1.icu/2021/08/24/hello-world/</id>
-    <published>2021-08-24T06:16:23.394Z</published>
-    <updated>2021-09-29T00:58:52.421Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="git" scheme="http://xiaolan1.icu/categories/git/"/>
-    
-    
-    <category term="git" scheme="http://xiaolan1.icu/tags/git/"/>
     
   </entry>
   

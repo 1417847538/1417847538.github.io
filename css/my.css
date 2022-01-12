@@ -10,7 +10,7 @@
     padding: 0;
 }
 .github-emoji:hover{
-    animation: emoji-face 5s infinite ease-in-out;
+    animation: emoji-face 10s infinite ease-in-out;
 }
 @keyframes emoji-face {
     2% {
